@@ -7,11 +7,11 @@ public class OnboardingService {
     private final StudentValidator validator;
     private final OnboardingPrinter printer;
 
-    public OnboardingService(StudentRepository repo, OnboardingPrinter printer) {
+    public OnboardingService(StudentRepository repo, OnboardingPrinter printer, StudentValidator validator) {
         this.repo = repo;
         this.printer = printer;
         this.parser = new StudentParser();
-        this.validator = new StudentValidator();
+        this.validator = validator;
     }
 
     public void registerFromRawInput(String raw) {
